@@ -1,14 +1,8 @@
-{
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Style the header */
 header {
-  background-color: #666;
+  background-color: ##80eb34;
   padding: 30px;
   text-align: center;
   font-size: 35px;
