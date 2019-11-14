@@ -2,7 +2,7 @@ body {
   background-image: url("https://serusan.github.io/seru.jpg");
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: auto;
+  background-size: 300px 100px;
 }
 h1 {
   color: blue;
