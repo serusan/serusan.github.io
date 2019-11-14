@@ -1,8 +1,5 @@
 body {
-  background-image: url("https://serusan.github.io/seru.jpg");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 300px 100px;
+  background-color: blue;
 }
 h1 {
   color: blue;
@@ -15,4 +12,8 @@ div {
   border: 15px solid green;
   padding: 50px;
   margin: 20px;
+  background-image: url("https://serusan.github.io/seru.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto;
 }
