@@ -1,15 +1,15 @@
 #header{
-	height:100px;
+	height:10%;
 	background-color:#F3F2ED;
-	margin:0;
-	padding:0;
+	margin:20%;
+	padding:20%;
 	}
 
 
 #footer{
-	height:50px;
+	height:90%;
 	background:#BFBD93;
 	border-top:#FFFFFF 2px solid;
-	margin:0;
-	padding:0;
+	margin:20%;
+	padding:20%;
 	}
