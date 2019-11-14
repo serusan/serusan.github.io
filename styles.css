@@ -1,4 +1,5 @@
 #header{
+	align: center;
 	height:10%;
 	background-color:#F3F2ED;
 	margin:20%;
@@ -7,6 +8,7 @@
 
 
 #footer{
+	align: center;
 	height:90%;
 	background:#BFBD93;
 	border-top:#FFFFFF 2px solid;
