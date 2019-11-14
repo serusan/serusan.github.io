@@ -1,19 +1,54 @@
+{
+  box-sizing: border-box;
+}
+
 body {
-  background-color: blue;
+  font-family: Arial, Helvetica, sans-serif;
 }
-h1 {
-  color: blue;
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
 }
-p {
-  color: red;
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
 }
-div {
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-  background-image: url("https://serusan.github.io/seru.jpg");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: auto;
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
