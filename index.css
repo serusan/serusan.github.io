@@ -6,12 +6,23 @@ body {
 
 /* Header/Blog Title */
 .header {
-  padding: 2px;
+  padding: 1px;
   text-align: center;
-  background: #f2f2f2;
+  background-color: #275f70;
+background-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2322bce0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+background-size: 80% 100%; /* background half the size of the div */
 }
-
 .header h1 {
+  font-family: "Courier New", Courier, monospace;
+font-size: 21px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #FF684B;
+font-weight: 400;
+text-decoration: rgb(68, 68, 68);
+font-style: oblique;
+font-variant: small-caps;
+text-transform: none;
   font-size: 32px;
 }
 
