@@ -59,8 +59,6 @@ text-transform: none;
 .rightcolumn {
   float: right;
   width: 25%;
-  background-color: white;
-  padding-left: 1%;
 }
 
 /* Fake image */
@@ -99,4 +97,13 @@ text-transform: none;
     float: none;
     width: 100%;
   }
+}
+
+iframe {
+    display:block;
+    width:100%;
+}
+
+iframe[seamless] {
+  display: block;
 }
