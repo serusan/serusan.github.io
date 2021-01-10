@@ -4,7 +4,8 @@ const canvasCtx = canvasElement.getContext('2d');
 var kekw = 0;
 var prevkekw = 0;
 var centery = 0;
-var comm = 0
+var comm = 0;
+var cdtime = 0
 function onResults(results) {
   comm = 0
   canvasCtx.save();
@@ -17,32 +18,28 @@ function onResults(results) {
                 {color: '#FF0000', lineWidth: 2});
   
   const kekw = results.poseLandmarks[0]['y'];
-  if (prevkekw != 0 ) {
-	if ((prevkekw - kekw) > 0.07){
-		if (Math.abs(kekw - centery) > 0.17){
+  if (prevkekw != 0 && cdtime == 0) {
+	if ((prevkekw - kekw) > 0.06){
 			console.log("Spring");
-			comm = 1
-			
-		};
-		
-	}
-	else if ((prevkekw - kekw) < -0.05){
-		if (Math.abs(kekw - centery) > 0.17){
+			comm = 1;
+			cdtime = 80	
+		}
+	else if ((prevkekw - kekw) < -0.06){	
 			console.log("Buk");
-			comm = -1
+			comm = -1;
+			cdtime = 80
 		};
 		
 	}
-}
-  else {
-		centery = kekw;
-  
-  };
-  if (comm != 0){
+  if (comm == 1){
 	jump()  
 	  
   };
   prevkekw = kekw;
+  cdtime--;
+  if (cdtime < 0){
+	  cdtime = 0
+  };
   canvasCtx.restore();
 };
 
