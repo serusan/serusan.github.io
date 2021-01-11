@@ -16,7 +16,7 @@ function onResults(results) {
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
   
-  const kekw = results.poseLandmarks[0]['y'];
+  var kekw = results.poseLandmarks[0]['y'];
   if (prevkekw != 0 ) {
 	if (Math.abs(kekw - centery) > 0.001){
 			console.log("Spring");
