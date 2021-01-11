@@ -18,7 +18,7 @@ function onResults(results) {
   
   const kekw = results.poseLandmarks[0]['y'];
   if (prevkekw != 0 ) {
-	if (Math.abs(kekw - centery) > 0.03){
+	if (Math.abs(kekw - centery) > 0.01){
 			console.log("Spring");
 			jump()
 			
