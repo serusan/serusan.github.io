@@ -25,12 +25,12 @@ function onResults(results) {
   if (kekw != 0 && cdtime <= 0 && comm == 0) {
 	if ((kekw - centery) < -0.003){
 			console.log("Spring");
-			cdtime = 60;
+			cdtime = 30;
 			jump()	
 		}	
 	else if ((kekw - centery) > 0.003 ){
 			console.log("Buk");
-			cdtime = 60;
+			cdtime = 30;
 			comm = -1;
 			
 		}
