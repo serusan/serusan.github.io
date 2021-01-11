@@ -20,17 +20,16 @@ function onResults(results) {
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
 
-  const kekw = results.poseLandmarks[0]['y'];
+  const kekw = results.poseLandmarks[10]['y'];
   center_update = center_update + kekw
-  if (prevkekw != 0 && cdtime <= 0 && comm == 0) {
-	if ((kekw - centery) < -0.08){
+  if (kekw != 0 && cdtime <= 0 && comm == 0) {
+	if ((kekw - centery) < -0.03){
 			console.log("Spring");
 			cdtime = 60;
 			jump()
 		}
 	else if ((kekw - centery) > 0.05 ){
-			console.log(kekw);
-			console.log(centery)
+			console.log("Buk");
 			cdtime = 60;
 			comm = -1;
 			jumpdown()
