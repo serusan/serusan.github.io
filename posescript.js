@@ -48,8 +48,8 @@ const pose = new Pose({locateFile: (file) => {
 pose.setOptions({
   upperBodyOnly: true,
   smoothLandmarks: true,
-  minDetectionConfidence: 0.9,
-  minTrackingConfidence: 0.9
+  minDetectionConfidence: 0.5,
+  minTrackingConfidence: 0.5
 });
 pose.onResults(onResults);
 const camera = new Camera(videoElement, {
