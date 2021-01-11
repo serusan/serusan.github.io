@@ -21,12 +21,12 @@ function onResults(results) {
   if (prevkekw != 0 && cdtime <= 0 && comm == 0) {
 	if ((prevkekw - centery) < -0.08){
 			console.log("Spring");
-			cdtime = 10;
+			cdtime = 2;
 			jump()	
 		}	
 	else if ((prevkekw - centery) > 0.08 ){
 			console.log("Buk");
-			cdtime = 10;
+			cdtime = 2;
 			comm = -1;
 			
 		};
