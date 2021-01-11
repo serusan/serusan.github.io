@@ -25,12 +25,12 @@ function onResults(results) {
   if (kekw != 0 && cdtime <= 0 && comm == 0) {
 	if ((kekw - centery) < -0.003){
 			console.log("Spring");
-			cdtime = 80;
+			cdtime = 60;
 			jump()	
 		}	
 	else if ((kekw - centery) > 0.003 ){
 			console.log("Buk");
-			cdtime = 80;
+			cdtime = 60;
 			comm = -1;
 			
 		}
@@ -44,8 +44,8 @@ function onResults(results) {
 		cdtime--;
 	    comm = 0;
   };
-  if ((center_refresh % 15) == 0){
-		centery = center_update/15;
+  if ((center_refresh % 8) == 0){
+		centery = center_update/8;
 		center_update = 0;
 	};
   prevkekw = kekw;
@@ -66,8 +66,8 @@ const camera = new Camera(videoElement, {
   onFrame: async () => {
     await pose.send({image: videoElement});
   },
-  width: 1280,
-  height: 720
+  width: 720,
+  height: 480
 });
 
 camera.start();
