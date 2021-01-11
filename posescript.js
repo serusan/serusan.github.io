@@ -22,7 +22,7 @@ function onResults(results) {
 			console.log("Spring");
 			jump()
 			
-		};
+		}
 	else if (Math.abs(kekw - centery) > 0.03){
 			console.log("Buk");
 			comm = -1
