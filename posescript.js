@@ -18,8 +18,9 @@ function onResults(results) {
   
   var kekw = results.poseLandmarks[0]['y'];
   if (prevkekw != 0 ) {
-	console.log(kekw);
+	
 	if ((kekw - centery) > 0.0){
+			console.log(kekw);
 			console.log("Spring");
 			jump()
 			
