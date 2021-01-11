@@ -23,14 +23,14 @@ function onResults(results) {
   const kekw = results.poseLandmarks[10]['y'];
   center_update = center_update + kekw
   if (kekw != 0 && cdtime <= 0 && comm == 0) {
-	if ((kekw - centery) < -0.003){
+	if ((kekw - centery) < -0.02){
 			console.log("Spring");
-			cdtime = 30;
+			cdtime = 80;
 			jump()	
 		}	
-	else if ((kekw - centery) > 0.003 ){
+	else if ((kekw - centery) > 0.02 ){
 			console.log("Buk");
-			cdtime = 30;
+			cdtime = 80;
 			comm = -1;
 			
 		}
@@ -45,7 +45,8 @@ function onResults(results) {
 	    comm = 0;
   };
   if ((center_refresh % 4) == 0){
-		centery = center_update/5;
+		centery = center_update/4;
+		console.log(centery)
 		center_update = 0;
 	};
   prevkekw = kekw;
@@ -66,8 +67,8 @@ const camera = new Camera(videoElement, {
   onFrame: async () => {
     await pose.send({image: videoElement});
   },
-  width: 720,
-  height: 480
+  width: 1280,
+  height: 720
 });
 
 camera.start();
