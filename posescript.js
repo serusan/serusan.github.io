@@ -19,34 +19,34 @@ function onResults(results) {
                  {color: '#00FF00', lineWidth: 4});
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
-  
-  const kekw = results.poseLandmarks[10]['y'];
+
+  const kekw = results.poseLandmarks[0]['y'];
   center_update = center_update + kekw
-  if (kekw != 0 && cdtime <= 0 && comm == 0) {
-	if ((kekw - centery) < -0.02){
+  if (prevkekw != 0 && cdtime <= 0 && comm == 0) {
+	if ((kekw - centery) < -0.08){
 			console.log("Spring");
-			cdtime = 80;
-			jump()	
-		}	
-	else if ((kekw - centery) > 0.02 ){
-			console.log("Buk");
-			cdtime = 80;
+			cdtime = 60;
+			jump()
+		}
+	else if ((kekw - centery) > 0.05 ){
+			console.log(kekw);
+			console.log(centery)
+			cdtime = 60;
 			comm = -1;
-			
+			jumpdown()
 		}
 	}
   else if (prevkekw == 0){
 		centery = kekw;
-		
-  
+
+
   }
   else{
 		cdtime--;
 	    comm = 0;
   };
-  if ((center_refresh % 4) == 0){
-		centery = center_update/4;
-		console.log(centery)
+  if ((center_refresh % 5) == 0){
+		centery = center_update/5;
 		center_update = 0;
 	};
   prevkekw = kekw;
@@ -67,8 +67,8 @@ const camera = new Camera(videoElement, {
   onFrame: async () => {
     await pose.send({image: videoElement});
   },
-  width: 1280,
-  height: 720
+  width: 720,
+  height: 480
 });
 
 camera.start();
