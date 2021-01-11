@@ -7,54 +7,74 @@
     width: 500px;
     height: 200px;
     border: 1px solid black;
+    background-image: url("clouds.jpg");
+    position: center;
     margin: auto;
 }
 #character{
+    background-image: url("slp.gif");
+    position:fixed;
+    top: 85px;
     width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: blue;
-    position:relative;
-    top: 170px;
+    height: 42px;
 }
 .animate{
-    animation: jump 0.5s linear;
+    animation: jump 1s linear;
 }
 @keyframes jump{
-    0%{top: 150px;}
+    0%{top: 75px;}
+    30%{top: 50px;}
+    70%{top: 10px;}
+    100%{top: 75px;}
+}
+
+/*
+@keyframes jumpdown{
+    0%{top: 75px;}
     30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+    70%{top: 140px;}
+    100%{top: 75px;}
 }
-
-
-}
-@keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
-}
-#clock{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: red;
-    position:relative;
-    bottom: 60px;
-    left: 400px;
-
-}
-#block2{
+*/
+#block{
     background-color: green;
     width: 30px;
-    height: 30px;
+    height: 100px;
     position: relative;
-    top: 0px;
+    top: 100px;
     left: 500px;
-    animation: block 2.5s infinite linear;
+    animation: block 4s infinite linear;
 }
 @keyframes block{
     0%{left: 500px}
     100%{left: -20px}
+}
+
+#block2{
+    background-color: red;
+    width: 30px;
+    height: 100px;
+    position: relative;
+    bottom: 50%;
+    left: 500px;
+    animation: block 6s infinite linear;
+}
+@keyframes block2{
+    0%{left: 500px}
+    100%{left: -20px}
+}
+/* #clock{
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: red;
+    position: relative;
+    top: -100px;
+    left: 400px;
+}
+*/
+body {
+ background-color: #ADD8E6;
 }
 p{
     text-align: center;

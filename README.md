@@ -1,1 +1,2 @@
-# serusan.github.io
+# aifighting
+creating a AI fighting game using blaze pose
