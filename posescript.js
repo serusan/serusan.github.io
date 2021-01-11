@@ -6,8 +6,11 @@ var prevkekw = 0;
 var centery = 0;
 var comm = 0;
 var cdtime = 0;
+var center_update = 0;
+var center_refresh = 0;
 function onResults(results) {
   comm = 0;
+  center_refresh ++;
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
   canvasCtx.drawImage(
@@ -17,20 +20,20 @@ function onResults(results) {
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
   
-  const kekw = results.poseLandmarks[0]['y'];
-  if (prevkekw != 0 && cdtime <= 0 && comm == 0) {
-	if ((prevkekw - centery) < -0.08){
+  const kekw = results.poseLandmarks[10]['y'];
+  center_update = center_update + kekw
+  if (kekw != 0 && cdtime <= 0 && comm == 0) {
+	if ((kekw - centery) < -0.04){
 			console.log("Spring");
-			cdtime = 2;
+			cdtime = 80;
 			jump()	
 		}	
-	else if ((prevkekw - centery) > 0.08 ){
+	else if ((kekw - centery) > 0.04 ){
 			console.log("Buk");
-			cdtime = 2;
+			cdtime = 80;
 			comm = -1;
 			
-		};
-		
+		}
 	}
   else if (prevkekw == 0){
 		centery = kekw;
@@ -41,6 +44,10 @@ function onResults(results) {
 		cdtime--;
 	    comm = 0;
   };
+  if ((center_refresh % 15) == 0){
+		centery = center_update/15;
+		center_update = 0;
+	};
   prevkekw = kekw;
   canvasCtx.restore();
 };
