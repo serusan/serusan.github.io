@@ -44,8 +44,8 @@ function onResults(results) {
 		cdtime--;
 	    comm = 0;
   };
-  if ((center_refresh % 8) == 0){
-		centery = center_update/8;
+  if ((center_refresh % 4) == 0){
+		centery = center_update/5;
 		center_update = 0;
 	};
   prevkekw = kekw;
