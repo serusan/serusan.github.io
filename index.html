@@ -1,158 +1,93 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
 <head>
-    <meta charset="utf-8" />
-    <title>test format game</title>
-    <style>
-    	* { padding: 0; margin: 0; }
-    	canvas { background:#FFE4C4; display: block; margin: 0 auto; }
-    </style>
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+<center>
+<div class="header">
+<h1>  한국 2020년  </h1>
+</div>
+</center>
 
-<canvas id="myCanvas" width="1500" height="305"></canvas>
+<div class="navbar">
+  <a href="https://serusan.github.io/index.html">Home</a>
+  <div class="dropdown" >
+    <button class="dropbtn" >Food & Booze
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://serusan.github.io/dinner.html">Dinner guide</a>
+      <a href="https://serusan.github.io/snacks.html">Snacks guide</a>
+      <a href="https://serusan.github.io/drinks.html">Drinks guide</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Locations
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://serusan.github.io/locations.html">Monuments</a>
+      <a href="https://serusan.github.io/area.html">Area Seoul </a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" > Roulettes
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" >
+      <a href="https://serusan.github.io/food.html">Food roulette</a>
+      <a href="https://serusan.github.io/drinksr.html">Drinks roulette</a>
+      <a href="https://serusan.github.io/clubr.html">Club roulette</a>
+    </div>
+    </div>
+    <a href="https://serusan.github.io/bk.html" style="float:right">Basic Korean</a>
 
-<script>
-	// JavaScript code goes here
-	var canvas = document.getElementById("myCanvas");
-	var ctx = canvas.getContext("2d");
-	var x = 100;
-	var z = 105;
-	var y = canvas.height/2;
-	var ballRadius = 20;
-	var rightPressed = false;
-	var leftPressed = false;
-	var upPressed = false;
-	var downPressed = false;
-	var spacePressed = false;
+</div>sss
 
-	document.addEventListener("keydown", keyDownHandler, false);
-	document.addEventListener("keyup", keyUpHandler, false);
-
-	//controls
-	function keyDownHandler(e) {
-	    if(e.key == "Right" || e.key == "ArrowRight") {
-		rightPressed = true;
-	    }
-	    else if(e.key == "Left" || e.key == "ArrowLeft") {
-		leftPressed = true;
-	    }
-	    else if(e.key == "Up" || e.key == "ArrowUp") {
-		upPressed = true;
-	    }
-	    else if(e.key == "Down" || e.key == "ArrowDown") {
-		downPressed = true;
-	    }
-	    else if(e.key == " " || e.key == "Spacebar") {
-		spacePressed = true;
-	    }
-	}
-
-	function keyUpHandler(e) {
-	    if(e.key == "Right" || e.key == "ArrowRight") {
-		rightPressed = false;
-	    }
-	    else if(e.key == "Left" || e.key == "ArrowLeft") {
-		leftPressed = false;
-	    }
-	    else if(e.key == "Up" || e.key == "ArrowUp") {
-		upPressed = false;
-	    }
-	    else if(e.key == "Down" || e.key == "ArrowDown") {
-		downPressed = false;
-	    }
-	    else if(e.key == " " || e.key == "Spacebar") {
-		spacePressed = false;
-	    }
-	}
-
-	//ball graphics
-	function drawBall() {
-	    ctx.beginPath();
-	    //ctx.arc(x, y, 20, 0, Math.PI*2);
-      ctx.fillText('😎', x, y)
-	    ctx.fillStyle = "#0095DD";
-	    ctx.fill();
-	    ctx.closePath();
-	ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-	}
-
-	//Weapon grapics
-	function drawWeapon() {
-	    ctx.beginPath();
-	    ctx.rect(z, y+5, 30, 10);
-	    ctx.fillStyle = "#0095DD";
-	    ctx.fill();
-	    ctx.closePath();
-	}
-
-  function drawSecondBall() {
-      ctx.beginPath();
-      ctx.arc(canvas.width-50, canvas.height/2, 20, 0, Math.PI*2);
-      ctx.fillStyle = "red";
-      ctx.fill();
-      ctx.closePath();
-	}
-
-
-
-
-
-	function draw() {
-	    ctx.clearRect(0, 0, canvas.width, canvas.height);
-	    drawBall();
-	    drawWeapon();
-      drawSecondBall();
-
-
-
-	//movement & boundaries
-	if(rightPressed) {
-	    x += 2;
-	    if (x + ballRadius > canvas.width){
-		x = canvas.width - ballRadius;
-	    }
-	}
-	else if(leftPressed) {
-	    x -= 2;
-	    if (x - ballRadius < 0){
-		x = ballRadius;
-	    }
-	}
-	if(upPressed) {
-	    y -= 2;
-	    if (y - ballRadius < 0){
-		y = ballRadius;
-	    }
-	}
-	else if(downPressed) {
-	    y += 2;
-	    if (y + ballRadius > canvas.height){
-			y = canvas.height - ballRadius;
-	    }
-	}
-
-	if(spacePressed) {
-		z+=5;
-		if (z + ballRadius > canvas.width){
-			z= x;
-		}
-
-	}
-
-	//outlining
-	ctx.beginPath();
-	ctx.rect(0, 0,  canvas.width, canvas.height);
-	ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
-	ctx.stroke();
-	ctx.closePath();
-
-	}
-
-	setInterval(draw, 10);
-
-
-</script>
-
+<div class="row">
+<div class="leftcolumn">
+  <div class="card">
+     <h4> Vakantieplan: </h4>
+     <h5>
+    - Vertrek 1e week zomervakantie (11-19 Juli) <br>
+    - Duur: 1-2 Weken <br>
+    - Verblijf: AirBnB/Hotel/Hostel
+  </h5>
+  </div>
+  <div class="card">
+    <h4> Tips:  </h4>
+    <h5>
+    1. Zuid-Korea is het land van de cash en de T-money kaart.
+     T-money kaart is je OV maar je kan het ook gebruiken als betaalmiddel bij convenience stores<br> <br>
+    2. Er is echt een convenience store elke 30 meter dus dat is pas chill. <br> <br>
+    3. Niet meer dan €20,-  wisselen in NL want je wordt lowkey afgepersd door GWK. <br> <br>
+    4. creditcard hoeft niet per sé maar is wel handig. <br> <br>
+    5. Het is kapot warm dus niet te dikke kleding meenemen. <br> <br>
+    6. Meeste van de clubs zijn van 22:00 tot 06:00 open en op vrijdagen en zaterdagen soms tot 09:00. <br> <br>
+  </h5>
+  </div>
+</div>
+</div>
+<div class="footer">
+<h2>This site is for personal entertainment.</h2>
+</div>
 </body>
-</html>
